@@ -1,0 +1,453 @@
+body {
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif;
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    background: #0f0f11;
+    color: #e4e4e7;
+}
+
+.sidebar {
+    width: 340px;
+    background: #18181b;
+    padding: 15px;
+    border-right: 1px solid #27272a;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.logo-area h1 {
+    font-size: 1.25rem;
+    margin: 0 0 12px 0;
+    color: #fafafa;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.search-bar {
+    padding: 10px;
+    margin-bottom: 12px;
+    background: #27272a;
+    border: 1px solid #3f3f46;
+    color: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-bar:focus {
+    border-color: #3b82f6;
+}
+
+.file-upload-btn {
+    background: #2563eb;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.file-upload-btn:hover {
+    background: #1d4ed8;
+}
+
+#file-input {
+    display: none;
+}
+
+.torrent-list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.torrent-item {
+    padding: 14px;
+    background: #212124;
+    border: 1px solid #27272a;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+.torrent-item:hover {
+    background: #27272a;
+    border-color: #3f3f46;
+}
+.torrent-item.active {
+    background: #1e3a8a;
+    border-color: #3b82f6;
+}
+.torrent-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 6px;
+    padding-right: 20px;
+}
+
+.torrent-meta {
+    font-size: 0.8rem;
+    color: #a1a1aa;
+    line-height: 1.4;
+}
+
+.torrent-item.active .torrent-meta {
+    color: #bfdbfe;
+}
+
+.progress-container {
+    background: #3f3f46;
+    border-radius: 9999px;
+    height: 6px;
+    width: 100%;
+    margin: 8px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: #3b82f6;
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.torrent-item.active .progress-bar {
+    background: #60a5fa;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #52525b;
+    color: #f4f4f5;
+    text-transform: uppercase;
+    margin-left: 4px;
+}
+
+.status-cached {
+    background: #166534;
+    color: #bbf7d0;
+}
+
+.status-downloading {
+    background: #1e40af;
+    color: #dbeafe;
+}
+
+.main-content {
+    flex: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.main-header {
+    border-bottom: 1px solid #27272a;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.main-header h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.5rem;
+    color: #fafafa;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.metric-card {
+    background: #18181b;
+    border: 1px solid #27272a;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: #71717a;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.metric-value {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f4f4f5;
+}
+
+.file-view-container {
+    flex: 1;
+    overflow-y: auto;
+    background: #18181b;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+}
+
+.file-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.file-table th,
+.file-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #27272a;
+    vertical-align: middle;
+}
+
+.file-table th {
+    background: #212124;
+    font-weight: 600;
+    color: #a1a1aa;
+}
+
+.empty-state {
+    padding: 60px;
+    text-align: center;
+    color: #71717a;
+}
+
+.btn-dl {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-dl:hover {
+    background: #059669;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-card {
+    background: #18181b;
+    border: 1px solid #27272a;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.modal-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #27272a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fafafa;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    color: #a1a1aa;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+.btn-close:hover {
+    color: #ffffff;
+}
+
+.modal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #a1a1aa;
+    text-transform: uppercase;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    padding: 10px;
+    background: #27272a;
+    border: 1px solid #3f3f46;
+    color: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #3b82f6;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding-top: 4px;
+}
+
+.checkbox-group input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    text-transform: none;
+    font-size: 0.9rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.modal-footer {
+    padding: 12px 20px;
+    background: #141416;
+    border-top: 1px solid #27272a;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-primary {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #059669;
+}
+
+.btn-secondary {
+    background: #27272a;
+    color: #e4e4e7;
+    border: 1px solid #3f3f46;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: #3f3f46;
+    color: white;
+}
+
+.torrent-item {
+    padding: 14px;
+    background: #212124;
+    border: 1px solid #27272a;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+    position: relative; 
+}
+
+.torrent-item:hover {
+    background: #27272a;
+    border-color: #3f3f46;
+}
+
+.torrent-item.active {
+    background: #1e3a8a;
+    border-color: #3b82f6;
+}
+
+.btn-delete-torrent {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #27272a;
+    border: 1px solid #3f3f46;
+    color: #ef4444;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.15s ease-in-out;
+}
+
+.torrent-item:hover .btn-delete-torrent {
+    opacity: 1;
+    visibility: visible;
+}
+
+.btn-delete-torrent:hover {
+    background: #ef4444;
+    color: white;
+    border-color: #ef4444;
+}

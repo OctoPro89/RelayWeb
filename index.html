@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Relay Client</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="Relay_transparent.png">
+    </head>
+    <body>
+        <!-- Sidebar Layout -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-area">                    
+                    <h1>Relay Client</h1>
+                </div>
+                <input type="text" id="search-input" placeholder="Search torrents..." class="search-bar"/>
+                <label onclick="createTorrent()" class="file-upload-btn">Create Torrent</label>
+            </div>
+
+            <div class="torrent-list" id="torrent-list">
+                <div class="empty-state">No torrents loaded</div>
+            </div>
+        </aside>
+
+        <!-- Content Layout -->
+        <main class="main-content">
+            <div class="main-header" id="main-header-region" style="display: none">
+                <h2 id="selected-torrent-title">No Torrent Selected</h2>
+                <div id="big-progress-wrapper">
+                    <div class="progress-container" style="height: 10px">
+                        <div class="progress-bar" id="main-progress-bar"></div>
+                    </div>
+                </div>
+                <div class="metrics-grid" id="metrics-grid-container"></div>
+            </div>
+
+            <div class="file-view-container" id="file-view-container">
+                <div class="empty-state">
+                    <p>
+                        Select a torrent from the sidebar to inspect its file
+                        manifest and metrics.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Create Torrent Modal Dialog Overlay -->
+        <div id="create-torrent-modal" class="modal-overlay" style="display: none;">
+            <div class="modal-card">
+                <div class="modal-header">
+                    <h3>Create New Torrent</h3>
+                    <button class="btn-close" onclick="closeCreateModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="modal-magnet-input">Magnet Link or Info Hash</label>
+                        <input type="text" id="modal-magnet-input" placeholder="magnet:?xt=urn:btih:..." />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="modal-seed-select">Seeding Strategy Options</label>
+                        <select id="modal-seed-select">
+                            <option value="auto">Auto (Default Balance)</option>
+                            <option value="seed">Forced Seed (Always Upload)</option>
+                            <option value="dont_seed">Don't Seed (Download Only)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="modal-allow-zip" />
+                        <label for="modal-allow-zip">Allow ZIP extraction package mapping</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="closeCreateModal()">Cancel</button>
+                    <button class="btn-primary" onclick="submitCreateTorrent()">Create Torrent</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
