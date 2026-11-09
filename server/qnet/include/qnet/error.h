@@ -1,0 +1,26 @@
+#pragma once
+
+typedef enum {
+	qnet_success = 0,
+	qnet_error_winsock_api_startup_failed,
+	qnet_error_winsock_api_invalid_version,
+	qnet_error_socket_creation_failed,
+	qnet_error_socket_close_failed,
+	qnet_error_socket_option_invalid,
+	qnet_error_socket_option_set_failed,
+	qnet_error_socket_bind_failed,
+	qnet_error_socket_listen_failed_to_bind,
+	qnet_error_socket_listen_failed,
+	qnet_error_socket_accept_failed,
+	qnet_error_socket_io_type_invalid,
+	qnet_error_socket_send_failed,
+	qnet_error_socket_recv_failed,
+	qnet_error_socket_send_packet_failed,
+	qnet_error_socket_recv_packet_failed,
+	qnet_error_socket_poll_timed_out,
+	qnet_error_socket_poll_subsystem_failed,
+	qnet_error_socket_poll_exception_occurred,
+	qnet_error_socket_poll_invalid_parameter,
+	qnet_error_socket_poll_memory_allocation_failed,
+	qnet_error_endpoint_failed_to_resolve
+} qnet_error;

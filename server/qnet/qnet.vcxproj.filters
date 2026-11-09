@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\qnet\common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qnet\network.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qnet\error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qnet\qnet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qnet\netdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qnet\socket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qnet\endpoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qnet\udp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qnet\tls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qnet\https_client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qnet\qjson.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\qnet\http_server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\network.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\qnet.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\socket.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\endpoint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\udp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tls.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\https_client.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\qjson.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\http_server.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
